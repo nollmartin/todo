@@ -1,0 +1,8 @@
+<div class="fejlec">
+  <button (click)="add()">{{newTodo===false ? 'Add new todo' : 'Cancel add new todo'}}</button>
+</div>
+<div class="new" *ngIf="newTodo">Title: <input [(ngModel)]="_name" type="text"><br>Description: <input [(ngModel)]="_description" type="text"><br><button (click)="addTodo()">Add</button></div>
+<div *ngIf="!newTodo">
+  <div *ngFor="let todo of todos; let i = index" class="todo">Title: {{todo.name}}; <br> Description: {{todo.description}} -- <button (click)="setDone(i)" *ngIf="todo.done=='0'">Done</button></div>
+</div>
+
